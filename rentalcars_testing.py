@@ -32,9 +32,7 @@ while run_program == True:
         if selection == 0:
             get_selection = False
             run_program = False
-        # Check if selection is in range
-        elif selection < 0 or selection > len(cars):
-            print(f"Number must be between 1 and {len(cars)}")
+
         # Check if selected car is available
         elif availability[selection-1] == False:
             print("*** This vehicle is already booked. Please book another ***")
@@ -44,15 +42,12 @@ while run_program == True:
             get_name = True
             while get_name == True:
                 name = input("Enter your name: ")
-                if name.strip() == "":
-                    print("You must enter something")
-                else:
-                    # Put their name in the corresponding position in the renters list so it matches the car's position
-                    renters[selection-1] = name
-                    get_name = False
-                    print(f"You have booked the {cars[selection-1]}")
-                    availability[selection-1] = False
-                    get_selection = False
+                # Put their name in the corresponding position in the renters list so it matches the car's position
+                renters[selection-1] = name
+                get_name = False
+            print(f"You have booked the {cars[selection-1]}")
+            availability[selection-1] = False
+            get_selection = False
 
     # Program ends by printing a summary of the rentals today
     for i in range(len(cars)):
