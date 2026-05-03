@@ -15,4 +15,4 @@ eyes = ["Brown", "Blue", "Brown", "Grey"]
 # Inside the {}, just add :width
 # e.g. {names[0]:20} will make the names column 20 characters wide
 for i in range(len(names)):
-    print(f"{names[i]:>10} {ages[i]:8} {eyes[i]}")
+    print(f"{i+1} {names[i]:>10} {ages[i]:8} {eyes[i]}")
